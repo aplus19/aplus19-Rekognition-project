@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Project Rekognition</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-brand">
+      <span class="nav-logo">👁️</span>
+      <span class="nav-title">RekognitionAI</span>
+    </div>
+    <div class="nav-links">
+      <a href="#" class="nav-link active" onclick="showTab('home')">Home</a>
+      <a href="#" class="nav-link" onclick="showTab('analyze')">Analyze</a>
+      <a href="#" class="nav-link" onclick="showTab('history')">History</a>
+      <a href="#" class="nav-link" onclick="showTab('about')">About</a>
+    </div>
+  </nav>
+
+  <!-- HOME TAB -->
+  <div id="tab-home" class="tab-content active">
+    <div class="hero">
+      <div class="hero-content">
+        <div class="hero-badge">Powered by Amazon Rekognition</div>
+        <h1 class="hero-title">AI Image Analysis<br/><span class="gradient-text">At Your Fingertips</span></h1>
+        <p class="hero-subtitle">Upload any image and instantly detect objects, faces, emotions, and text using AWS AI/ML technology.</p>
+        <button class="btn-primary" onclick="showTab('analyze')"> Start Analyzing</button>
+      </div>
+      <div class="hero-cards">
+        <div class="feature-card">
+          <div class="feature-icon">🏷️</div>
+          <div class="feature-title">Label Detection</div>
+          <div class="feature-desc">Identify objects, scenes, and concepts</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">👤</div>
+          <div class="feature-title">Face Analysis</div>
+          <div class="feature-desc">Detect emotions, age, gender and more</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📝</div>
+          <div class="feature-title">Text Extraction</div>
+          <div class="feature-desc">Extract text from any image (OCR)</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <div class="feature-title">Real-time Results</div>
+          <div class="feature-desc">Get instant analysis in seconds</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ANALYZE TAB -->
+  <div id="tab-analyze" class="tab-content">
+    <div class="page-container">
+      <div class="page-header">
+        <h2>Analyze Image</h2>
+        <p>Upload a JPEG or PNG image to begin analysis</p>
+      </div>
+      <div class="analyze-grid">
+        <div class="upload-panel">
+          <div class="upload-box" id="dropZone">
+            <input type="file" id="fileInput" accept=".jpg,.jpeg,.png" hidden />
+            <label for="fileInput">
+              <div class="upload-icon">📁</div>
+              <p class="upload-text">Click to upload or drag & drop</p>
+              <p class="upload-hint">JPEG or PNG · Max 5MB</p>
+            </label>
+          </div>
+          <div id="preview-section" class="hidden">
+            <img id="preview" src="" alt="Preview" />
+            <button class="btn-primary full-width" id="analyzeBtn">🔍 Analyze Image</button>
+          </div>
+          <div id="status" class="hidden"></div>
+        </div>
+        <div class="results-panel">
+          <div id="results-placeholder" class="results-placeholder">
+            <div class="placeholder-icon">🔍</div>
+            <p>Upload an image to see analysis results here</p>
+          </div>
+          <div id="results" class="hidden"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HISTORY TAB -->
+  <div id="tab-history" class="tab-content">
+    <div class="page-container">
+      <div class="page-header">
+        <h2>Analysis History</h2>
+        <p>Your recent image analyses</p>
+      </div>
+      <div id="history-list">
+        <div class="empty-state">
+          <div class="placeholder-icon">📂</div>
+          <p>No analyses yet — go to Analyze to get started!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT TAB -->
+  <div id="tab-about" class="tab-content">
+    <div class="page-container">
+      <div class="page-header">
+        <h2>About This Project</h2>
+        <p>Project 2 — Amazon Rekognition Image Analysis Pipeline</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-card">
+          <h3>🏗️ Architecture</h3>
+          <ul>
+            <li>Amazon S3 — Image storage & static hosting</li>
+            <li>AWS Lambda — Serverless compute</li>
+            <li>Amazon Rekognition — AI/ML vision</li>
+            <li>API Gateway — REST API</li>
+            <li>Terraform — Infrastructure as Code</li>
+            <li>CloudWatch — Monitoring & logging</li>
+          </ul>
+        </div>
+        <div class="about-card">
+          <h3> AI Capabilities</h3>
+          <ul>
+            <li>DetectLabels — Objects & scenes</li>
+            <li>DetectFaces — Facial analysis</li>
+            <li>DetectText — OCR text extraction</li>
+            <li>Confidence scoring on all results</li>
+            <li>Supports JPEG and PNG formats</li>
+            <li>Up to 5MB image size</li>
+          </ul>
+        </div>
+        <div class="about-card">
+          <h3> Tech Stack</h3>
+          <ul>
+            <li>Python 3.10 — Lambda runtime</li>
+            <li>Boto3 — AWS SDK for Python</li>
+            <li>Terraform 5.0 — IaC provisioning</li>
+            <li>HTML/CSS/JavaScript — Frontend</li>
+            <li>AWS Free Tier — 5000 analyses/month</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
