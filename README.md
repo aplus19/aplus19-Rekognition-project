@@ -268,7 +268,7 @@ This removes all S3 buckets, Lambda functions, API Gateway, IAM roles, and Cloud
 
 ## 👨‍💻 Authors
 
-**ANNOR MICHAEL OWUSUS** — Cloud & AI Engineering Student
+**ANNOR MICHAEL OWUSU** — Cloud & AI Engineering Student
 **Group 4 Project** — Built as part of Cloud Computing coursework at Get Skill Network
 
 ## 📄 License
